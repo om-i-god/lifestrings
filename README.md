@@ -28,6 +28,11 @@ root — physics, not a metronome.
 
 Or copy `lifestrings.lua` to `dust/code/lifestrings/` on your norns.
 
+## Devlog
+
+See [DEVLOG.md](DEVLOG.md) for the design narrative — why it's rotated, how the
+chevron of strings works, and how bass strikes re-anchor the key.
+
 ## Version
 
 v1.3
