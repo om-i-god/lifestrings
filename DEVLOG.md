@@ -102,6 +102,25 @@ With no text, the screen leans on motion:
   bass strike.
 - **Anchor dots** — faint marks at each natural strike point, brightening on strike.
 
+## The overlay — a concession on the no-text rule
+
+The "no on-screen text" stance above held for the *running* instrument, but it
+created a real problem: with eight modifier combinations (K1/K2 × encoders) and no
+labels, the controls were unlearnable. The compromise was a **help overlay** that
+breaks the rule deliberately and narrowly.
+
+The key trick is that it sidesteps the rotation problem instead of fighting it.
+Text rendered in the rotated `(u,v)` frame is illegible, so the overlay draws a
+compact HUD on the **physical, un-rotated screen** via a dedicated `lcd_text`
+helper — readable text, at the cost of being oriented for the un-rotated unit.
+
+It's also transient by design: it appears on *any* input and then fades out when
+idle — `OVERLAY_HOLD = 3.0s` of full visibility after the last input, then
+`OVERLAY_FADE = 0.7s` to fade away. So during play the screen stays pure pendulum
+field; the labels only surface when you reach for a control and dissolve once you
+stop. Text on demand, silence by default — the no-text aesthetic preserved
+everywhere it matters, with an escape hatch exactly where it was needed.
+
 ## Published (2026-05-31)
 
 v1.3 pushed to [github.com/om-i-god/lifestrings](https://github.com/om-i-god/lifestrings)
