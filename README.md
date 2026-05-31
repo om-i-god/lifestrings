@@ -2,18 +2,18 @@
 
 A pendulum-wave sequencer for [norns](https://monome.org/docs/norns/).
 
-17 strings sit on a single beam, the whole rig rotated 90° counter-clockwise so the
-pendulums swing across the screen. Each string's chevron length sets its period, so
-they drift in and out of phase over a 30-second cycle — a pendulum-wave music box.
+Hold the norns rotated **90° CCW** (encoders along the top from your POV, reading
+E1 E2 E3 left→right). 17 pendulums hang from a single beam at user-top: 3 bass at
+the ends + middle, 14 leads filling between. Each fires once per swing on its
+left→right pass through the pivot. Bass strikes re-anchor the lead scale to a new
+root — physics, not a metronome.
 
 ## Controls
 
-- **E1** — master tune
-- **E2** — tempo / time-scale
-- **E3** — spread (period range)
-- **K2** — reset all to phase zero
-- **K3** — cycle scale
-- **K1 + K3** — cycle waveform
+- **E1** lead period · **E2** amp · **E3** spread
+- **K1 + E1** cutoff · **K1 + E2** root · **K1 + E3** mode
+- **K2 + E1** octave · **K2 + E2** note length
+- **K1 + K2** sync · **K1 + K3** scatter
 
 ## Requirements
 
@@ -22,11 +22,11 @@ they drift in and out of phase over a 30-second cycle — a pendulum-wave music 
 
 ## Install
 
-Copy `lifestrings.lua` to `dust/code/lifestrings/` on your norns, or clone:
-
 ```
 ;install https://github.com/om-i-god/lifestrings
 ```
+
+Or copy `lifestrings.lua` to `dust/code/lifestrings/` on your norns.
 
 ## Version
 
