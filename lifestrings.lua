@@ -560,7 +560,7 @@ local function scatter_all()
 end
 
 function init()
-  params:add_separator("hypnotizer")
+  params:add_separator("lifestrings")
 
   params:add_number("root", "root", 24, 96, 48,
     function(p) return note_name(p:get()) end)
