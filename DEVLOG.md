@@ -110,9 +110,12 @@ labels, the controls were unlearnable. The compromise was a **help overlay** tha
 breaks the rule deliberately and narrowly.
 
 The key trick is that it sidesteps the rotation problem instead of fighting it.
-Text rendered in the rotated `(u,v)` frame is illegible, so the overlay draws a
-compact HUD on the **physical, un-rotated screen** via a dedicated `lcd_text`
-helper — readable text, at the cost of being oriented for the un-rotated unit.
+Glyphs can't be rotated, so rather than route through the `lcd_*` mapping, the
+overlay draws its labels with plain `screen.text` in the **un-rotated screen
+frame**. From the player's rotated POV the text reads *sideways* — a deliberate
+trade noted right in the source ("brief tilt-of-the-head reads them"). The labels
+are terse three-token strips keyed to the modifier state (`1per 2amp 3spr`, or
+`K1: cut rt mod`, etc.), with a second line of compound hints while K1 is held.
 
 It's also transient by design: it appears on *any* input and then fades out when
 idle — `OVERLAY_HOLD = 3.0s` of full visibility after the last input, then
